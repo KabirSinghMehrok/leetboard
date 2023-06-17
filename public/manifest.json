@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Leetboard",
+  "version": "1.0",
+  "description": "Follow your friends on a Leetcode leaderboard",
+  "icons": {
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+    }
+  },
+  "permissions": []
+}
