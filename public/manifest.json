@@ -10,5 +10,10 @@
     "default_icon": {
     }
   },
-  "permissions": []
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage"
+  ]
 }
