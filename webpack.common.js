@@ -1,11 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
   entry: {
-    popup: "./src/popup/Popup.jsx",
+    popup: path.resolve("./src/popup/Popup.jsx"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -35,11 +35,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: "Leetboard",
       template: "./src/popup/popup.html",
       filename: "popup.html",
     }),
     new CopyPlugin({
       patterns: [{ from: "public" }],
+    }),
+    new ESLintPlugin({
+      extensions: ['js', 'jsx'],
     }),
   ],
   devServer: {
@@ -48,4 +52,7 @@ module.exports = {
 			overlay: false,
 		}
   },
+  watchOptions: {
+    ignored: ['**/node_modules', '**/dist', '**/public'],
+  }
 };
