@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto"; // eslint-disable-line no-unused-vars
-
 import "../../style/style.css";
-import fillOverviewData from "../../data/overview";
 
-function BarChart() {
+function BarChart({data}) {
   const options = {
     maintainAspectRatio: false,
     responsive: true,
@@ -58,20 +56,6 @@ function BarChart() {
       },
     },
   };
-
-  // console.log('is this working or something?');
-  // console.log(fillOverviewData());
-
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fillOverviewData();
-      setData(response);
-      console.log("yes it updated");
-    };
-    fetchData();
-  }, []);
 
   return (
     <div>

@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "server": "webpack serve --open --config webpack.dev.js",
-    "watch": "webpack --watch --progress --config webpack.dev.js"
+    "build": "NODE_ENV=production && webpack --config webpack.prod.js",
+    "server": "NODE_ENV=development && webpack serve --open --config webpack.dev.js",
+    "watch": "NODE_ENV=development && webpack --watch --progress --config webpack.dev.js"
   },
   "keywords": [],
   "author": "",

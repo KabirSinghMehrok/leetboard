@@ -13,13 +13,15 @@
 - [ ] Show loading
 
 # User management
-- [ ] Add input to accept users
-- [ ] Store input in local storage
+- [x] Add input to accept users
+- [x] Store input in local storage
 - [ ] Retrieve users from local storage and parse it to leetcode api
 
 # Issues
-- [ ] dev script not working properly, had to manually add mode development
+- [ ] 
 - [ ] improve overview.js code
+- [x] fetching user data not working
+- [x] dev script not working properly, had to manually add mode development
 
 # Future scope
 - [ ] Setup a proxy for the api's so that you can build your own api endpoints in the future
