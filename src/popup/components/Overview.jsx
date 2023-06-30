@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import BarChart from "../charts/BarChart";
 import "../../style/style.css";
 
-function Overview({data}) {
+function Overview({data, fetchData}) {
   return (
     <div className="h-full w-full">
       {data.length==0 ? (
@@ -10,7 +10,7 @@ function Overview({data}) {
           <p className="mx-auto my-auto text-gray-200">No friends found</p>
         </div>
       ) : (
-        <BarChart data={data} />
+        <BarChart data={data} fetchData={fetchData} />
       )}
     </div>
   );

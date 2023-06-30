@@ -53,7 +53,7 @@ function Popup() {
 
       {/* Tab content */}
       <div className="grow w-full py-4 px-4 bg-white dark:bg-slate-700">
-        {showTab == "overview" ? <Overview data={data}/> : <Topics />}
+        {showTab == "overview" ? <Overview data={data} fetchData={fetchData}/> : <Topics />}
       </div>
 
       {/* User management bar */}

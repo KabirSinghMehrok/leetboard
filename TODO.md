@@ -15,11 +15,19 @@
 # User management
 - [x] Add input to accept users
 - [x] Store input in local storage
-- [ ] Retrieve users from local storage and parse it to leetcode api
+- [x] Retrieve users from local storage and parse it to leetcode api
 
 # Issues
-- [ ] 
+## Really Imp
+- [ ] add feature to delete a specific friend
+- [ ] use enter key to enter value of friends
+- [ ] Sort the friends according to highest number of questions done
+
+## Less Imp
+- [ ] make sure bar in a char occupies a specific amount of pixels
 - [ ] improve overview.js code
+
+## Do it later
 - [x] fetching user data not working
 - [x] dev script not working properly, had to manually add mode development
 
