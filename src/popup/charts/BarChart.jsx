@@ -4,7 +4,7 @@ import { Chart as ChartJS } from "chart.js/auto"; // eslint-disable-line no-unus
 import "../../style/style.css";
 import consoleLog from "../../helper/consoleLog";
 
-function BarChart({ data, fetchData, reloadData }) {
+function BarChart({ data, fetchData }) {
 
   function deleteUserAndUpdateData(index) {
     chrome.storage.sync.get("friends", (result) => {
@@ -66,20 +66,6 @@ function BarChart({ data, fetchData, reloadData }) {
       },
     },
 
-    onHover: (event, elements, chart) => {
-      if (elements.length > 0) {
-        const hoverElement = elements[0];
-        const index = hoverElement.index;
-        consoleLog('mouse in');
-        handleHover(true, index);
-        chart.update();
-      }
-       else {
-        consoleLog('mouse out');
-        handleHover(false);
-      }
-    },
-
     onClick: (event, elements) => {
       if (elements && elements.length > 0) {
         const clickedElement = elements[0];
@@ -108,15 +94,6 @@ function BarChart({ data, fetchData, reloadData }) {
       },
     },
   };
-
-  function handleHover(mouseIn, index='') {
-    const chart = chartRef.current;
-    if (mouseIn) {
-      chart.data.labels[index] = 'Delete';
-    } else {
-      reloadData();
-    }
-  }
 
   const chartRef = useRef(null);
   useEffect(() => {
