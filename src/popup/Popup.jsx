@@ -17,11 +17,16 @@ function Popup() {
     "text-gray-700 bg-transparent border-b-2 border-transparent sm:text-base dark:text-gray-400 cursor-base hover:border-gray-400";
 
   const [data, setData] = useState([]);
+  const [rerender, setRerender] = useState(false);
   
   const fetchData = async () => {
     const response = await fillOverviewData();
     setData(response);
   };
+
+  const reloadData = () => {
+    setTimeout(setRerender(!rerender), 100);
+  }
 
   useEffect(() => {
     fetchData();
@@ -53,7 +58,7 @@ function Popup() {
 
       {/* Tab content */}
       <div className="grow w-full py-4 px-4 bg-white dark:bg-slate-700">
-        {showTab == "overview" ? <Overview data={data} fetchData={fetchData}/> : <Topics />}
+        {showTab == "overview" ? <Overview data={data} fetchData={fetchData} reloadData={reloadData}/> : <Topics />}
       </div>
 
       {/* User management bar */}

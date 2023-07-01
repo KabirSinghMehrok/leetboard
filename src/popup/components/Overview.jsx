@@ -2,7 +2,7 @@ import React from "react";
 import BarChart from "../charts/BarChart";
 import "../../style/style.css";
 
-function Overview({data, fetchData}) {
+function Overview({data, fetchData, reloadData}) {
   return (
     <div className="h-full w-full">
       {data.length==0 ? (
@@ -10,7 +10,7 @@ function Overview({data, fetchData}) {
           <p className="mx-auto my-auto text-gray-200">No friends found</p>
         </div>
       ) : (
-        <BarChart data={data} fetchData={fetchData} />
+        <BarChart data={data} fetchData={fetchData} reloadData={reloadData} />
       )}
     </div>
   );

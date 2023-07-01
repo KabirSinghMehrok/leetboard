@@ -4,7 +4,7 @@ import { Chart as ChartJS } from "chart.js/auto"; // eslint-disable-line no-unus
 import "../../style/style.css";
 import consoleLog from "../../helper/consoleLog";
 
-function BarChart({ data, fetchData }) {
+function BarChart({ data, fetchData, reloadData }) {
 
   function deleteUserAndUpdateData(index) {
     chrome.storage.sync.get("friends", (result) => {
@@ -113,6 +113,8 @@ function BarChart({ data, fetchData }) {
     const chart = chartRef.current;
     if (mouseIn) {
       chart.data.labels[index] = 'Delete';
+    } else {
+      reloadData();
     }
   }
 
